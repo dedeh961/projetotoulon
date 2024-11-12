@@ -32,11 +32,8 @@
           return;
         }
 
-        const mapeamento_do_arquivo = new FormData();
-        mapeamento_do_arquivo.append('file', this.arquivo_selecionado);
-        
         try {
-          const response = await axios.post('http://localhost:8000/EnviarCSV/', mapeamento_do_arquivo, {
+          const response = await axios.post('http://localhost:8000/EnviarCSV/', this.arquivo_selecionado, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
